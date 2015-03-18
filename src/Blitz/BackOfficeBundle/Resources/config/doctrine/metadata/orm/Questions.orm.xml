@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Questions" table="questions">
+    <id name="questionId" type="integer" column="question_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="corpsquestion" type="string" column="corpsQuestion" length="255" nullable="false"/>
+    <field name="poidsquestion" type="string" column="poidsQuestion" length="255" nullable="false"/>
+    <field name="reponse" type="string" column="reponse" length="255" nullable="false"/>
+    <field name="type" type="string" column="Type" length="255" nullable="false"/>
+    <many-to-many field="test" target-entity="Tests" mapped-by="question"/>
+  </entity>
+</doctrine-mapping>

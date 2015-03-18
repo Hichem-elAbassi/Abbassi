@@ -1,0 +1,4 @@
+services:
+#    blitz_back_office.example:
+#        class: Blitz\BackOfficeBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

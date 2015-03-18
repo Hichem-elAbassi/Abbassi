@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Tests" table="tests">
+    <id name="testId" type="integer" column="test_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="nomtest" type="string" column="nomTest" length="255" nullable="false"/>
+    <field name="descriptiontest" type="string" column="descriptionTest" length="255" nullable="false"/>
+    <field name="typetest" type="string" column="typeTest" length="255" nullable="false"/>
+    <field name="nombrequestions" type="integer" column="nombreQuestions" nullable="false"/>
+    <many-to-many field="question" target-entity="Questions" inversed-by="test">
+      <join-table name="testquestions">
+        <join-columns>
+          <join-column name="test_id" referenced-column-name="test_id"/>
+        </join-columns>
+        <inverse-join-columns>
+          <join-column name="question_id" referenced-column-name="question_id"/>
+        </inverse-join-columns>
+      </join-table>
+    </many-to-many>
+  </entity>
+</doctrine-mapping>

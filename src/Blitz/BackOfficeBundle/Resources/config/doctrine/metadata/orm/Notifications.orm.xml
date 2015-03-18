@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Notifications" table="notifications">
+    <id name="notificationId" type="integer" column="notification_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="senderId" type="integer" column="sender_id" nullable="false"/>
+    <field name="receiverId" type="integer" column="receiver_id" nullable="false"/>
+    <field name="message" type="string" column="message" length="255" nullable="false"/>
+    <field name="etat" type="boolean" column="etat" nullable="false"/>
+  </entity>
+</doctrine-mapping>

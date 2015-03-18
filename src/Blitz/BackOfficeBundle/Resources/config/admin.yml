@@ -1,0 +1,59 @@
+# Acme/DemoBundle/Resources/config/admin.yml
+services:
+    
+    sonata.admin.Transactions:
+        class: Blitz\BackOfficeBundle\Admin\TransactionsAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Transactions" }
+        arguments:
+            - ~
+            - Blitz\BackOfficeBundle\Entity\Transactions
+            - ~
+        calls:
+            - [ setTranslationDomain, [BackOfficeBundle]]
+            
+    sonata.admin.projets:
+        class: Blitz\BackOfficeBundle\Admin\ProjetsAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Projets" }
+        arguments:
+            - ~
+            - Blitz\BackOfficeBundle\Entity\Projets
+            - ~
+        calls:
+            - [ setTranslationDomain, [BackOfficeBundle]]
+            
+    sonata.admin.utilisateurs:
+        class: Blitz\BackOfficeBundle\Admin\UtilisateursAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Utilisateurs" }
+        arguments:
+            - ~
+            - Blitz\BackOfficeBundle\Entity\Utilisateurs
+            - ~
+        calls:
+            - [ setTranslationDomain, [BackOfficeBundle]]
+
+    
+    sonata.admin.Groupes:
+        class: Blitz\BackOfficeBundle\Admin\GroupesAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Groupes" }
+        arguments:
+            - ~
+            - Blitz\BackOfficeBundle\Entity\Groupes
+            - ~
+        calls:
+            - [ setTranslationDomain, [BackOfficeBundle]]
+            
+    sonata.admin.Cv:
+        class: Blitz\BackOfficeBundle\Admin\CvAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "CV" }
+        arguments:
+            - ~
+            - Blitz\BackOfficeBundle\Entity\Cv
+            - ~
+        calls:
+            - [ setTranslationDomain, [BackOfficeBundle]]
+            

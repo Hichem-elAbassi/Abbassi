@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Groupes" table="groupes">
+    <id name="groupId" type="integer" column="group_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="chefgroupId" type="integer" column="chefgroup_id" nullable="false"/>
+    <field name="nomgroup" type="string" column="nomgroup" length="255" nullable="false"/>
+  </entity>
+</doctrine-mapping>
